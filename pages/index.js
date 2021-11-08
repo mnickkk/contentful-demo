@@ -7,11 +7,13 @@ import RecentPostList from "@components/RecentPostList";
 import HeroBanner from "@components/HeroBanner";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
+import { Carousel } from "@components/Carousel";
 
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
 
   const pageTitle = pageContent ? pageContent.title : "Home";
+  console.log(pageContent);
 
   const pageDescription = pageContent
     ? pageContent.description
@@ -25,10 +27,13 @@ export default function Home(props) {
           description={pageDescription}
           url={Config.pageMeta.home.url}
         />
-
-        {pageContent && pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
+        {pageContent && pageContent.carousel !== null && (
+          <Carousel data={pageContent.carousel} />
         )}
+
+        {/* {pageContent && pageContent.heroBanner !== null && (
+          <HeroBanner data={pageContent.heroBanner} />
+        )} */}
 
         <ContentWrapper>
           {pageContent && pageContent.body && (

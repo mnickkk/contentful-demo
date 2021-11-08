@@ -47,6 +47,20 @@ export default class ContentfulApi {
           sys {
             id
           }
+          carousel {
+            title
+            itemCollection {
+              items {
+                title
+                image {
+                  height
+                  width
+                  url
+                  fileName
+                }
+              }
+            }
+          }
           heroBanner {
             headline
             subHeading
@@ -103,11 +117,9 @@ export default class ContentfulApi {
     }`;
 
     const response = await this.callContentful(query, options);
-
     const pageContent = response.data.pageContentCollection.items
       ? response.data.pageContentCollection.items
       : [];
-
     return pageContent.pop();
   }
 

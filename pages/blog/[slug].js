@@ -4,10 +4,10 @@ import { Config } from "@utils/Config";
 import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
+import "tailwindcss/tailwind.css";
 
 export default function PostWrapper(props) {
-  const { post, preview } = props;
-
+  console.log({ post });
   return (
     <MainLayout preview={preview}>
       <PageMeta

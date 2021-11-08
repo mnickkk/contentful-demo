@@ -9,14 +9,10 @@ import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
 
 export default function BlogIndex(props) {
-  const {
-    postSummaries,
-    currentPage,
-    totalPages,
-    pageContent,
-    preview,
-  } = props;
+  const { postSummaries, currentPage, totalPages, pageContent, preview } =
+    props;
 
+  console.log({ pageContent, preview, currentPage });
   /**
    * This provides some fallback values to PageMeta so that a pageContent
    * entry is not required for /blog
